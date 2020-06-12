@@ -10,6 +10,7 @@ def input_to_index(input)
   index = input.to_i - 1
 end
 
+
 def position_taken? (board, index)
   if board[index] == "" || board[index] == " " || board[index] == nil
     return false
@@ -36,7 +37,7 @@ def turn(board)
   user_input = gets.strip
   index = input_to_index(user_input)
   if valid_move?(board, index)
-    player_move(board, index, current_player(board))
+    move(board, index, current_player(board))
     display_board(board)
   else
     turn(board)
